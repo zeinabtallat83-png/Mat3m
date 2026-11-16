@@ -160,50 +160,57 @@ h4 {
    <button class="wats" onclick="sendOrder()"> اطلب علي الواتساب</button>
 
 <script>
-function calc (){
-let s1= parseFloat( document.getElementById ('f1').value);
-let sum1 = s1*10;
-let s2= parseFloat( document.getElementById ('f2').value);
-let sum2 = s2*20;
-let s3 = parseFloat( document.getElementById ('f3').value);
-let sum3 = s3*15;
-let s4 = parseFloat( document.getElementById ('f4').value);
-let sum4= s4*15;
-let s5= parseFloat( document.getElementById ('f5').value);
-let sum5 = s5*10;
-let s6= parseFloat( document.getElementById ('f6').value);
-let sum6 = s6*60;
-let s7 = parseFloat( document.getElementById ('f7').value);
-let sum7 = s7*45;
-let s8 = parseFloat( document.getElementById ('f8').value);
-let sum8 = s8*100;
-let sum =sum1 + sum2 + sum3 + sum4 + sum5 + sum6 + sum7 + sum8 ;
- document.getElementById('cal').innerHTML = `الاجمالي  ${sum}`;
-};
 
- function sendOrder(){
-            let allInputs = document.querySelectorAll('.qty');
-            let msg =`طلب جديد من مطعم ست البيت \n`;
-            let hasOrder= false;
-allInputs.forEach(input=>{
-    let count =input.value ;
-    let name =input.getAttribute( 'data-name');
-    if( count>0){
-        msg +=`${name}:العدد ${count}\n`
-        hasOrder=true; }} );
-        if(!hasOrder){
-            alert(" اختار وجبه واحدة علي الاقل");
-            return; }
-let totalText = document.getElementById('cal').innerText; msg +=`n${totalText}`;
-let whatsappLink =  `https://wa.me/201065667221?text=${encodeURIComponent(msg)}`;
-  window.open(whatsappLink, '_blank`);
+function calc(){
+  let s1 = parseFloat(document.getElementById('f1').value) || 0;
+  let s2 = parseFloat(document.getElementById('f2').value) || 0;
+  let s3 = parseFloat(document.getElementById('f3').value) || 0;
+  let s4 = parseFloat(document.getElementById('f4').value) || 0;
+  let s5 = parseFloat(document.getElementById('f5').value) || 0;
+  let s6 = parseFloat(document.getElementById('f6').value) || 0;
+  let s7 = parseFloat(document.getElementById('f7').value) || 0;
+  let s8 = parseFloat(document.getElementById('f8').value) || 0;
 
+  let sum1 = s1*10;
+  let sum2 = s2*20;
+  let sum3 = s3*15;
+  let sum4 = s4*15;
+  let sum5 = s5*10;
+  let sum6 = s6*60;
+  let sum7 = s7*45;
+  let sum8 = s8*100;
+
+  let sum = sum1+sum2+sum3+sum4+sum5+sum6+sum7+sum8;
+  document.getElementById('cal').innerHTML = `الاجمالي ${sum}$`;
 }
+
+function sendOrder(){
+  let allInputs = document.querySelectorAll('.qty');
+  let msg = `طلب جديد من مطعم سد البيت\n`;
+  let hasOrder = false;
+
+  allInputs.forEach(input=>{
+    let count = input.value;
+    let name = input.getAttribute('data-name');
+    if(count > 0){
+      msg += `${name}: العدد ${count}\n`;
+      hasOrder = true;
+    }
+  });
+
+  if(!hasOrder){
+    alert("اختار وجبة واحدة على الاقل");
+    return;
+  }
+
+  let totalText = document.getElementById('cal').innerText;
+  msg += `\n${totalText}`;
+
+  let whatsappLink = `https://wa.me/201065667221?text=${encodeURIComponent(msg)}`;
+  window.open(whatsappLink, '_blank');
+}
+    
 </script>
-
-
-
-
 
 
 </body>
