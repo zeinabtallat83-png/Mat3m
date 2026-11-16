@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetElbet</title>
+    <style>
+ body {
+text-align: center; }
+header {
+height: 100px;
+width: 95%;
+color:black;
+background-color:rgb(110, 106, 106);
+box-shadow: 5px 5px 5px rgb(65, 85, 78);
+border-radius: 20px;
+margin: 10px auto;
+align-items: center;
+display: flex;
+flex-direction: row;
+}
+header img {
+    height: 90px;
+    width: 100px;
+    border-radius: 30px;
+    background-color: white;
+box-shadow: 3px 3px 3px aqua;
+margin-left: 10px;}
+
+ h1
+{font-size: 40px;
+font-weight: bolder; 
+margin: 20px auto;
+padding: 10px;
+border: 3px solid black;
+width: 50%;
+border-radius: 20px;
+
+    }
+.options {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+p{font-weight: bolder;
+color: black;
+ font-size: 20px;
+box-shadow: 5px 5px 5px aqua;
+border: 2px solid aquamarine;
+border-radius: 20px;
+padding: 10px;
+}
+
+.option{
+display:flex ;
+flex-direction: column;
+margin: 20px auto;
+padding:15px;
+max-width:40%;
+width: 300px;
+border-radius: 20px;
+height:700px;
+text-align: center;
+align-items: center;
+}
+h2 ,h3
+ {font-size: 30px;
+font-weight: bolder;
+box-shadow: 2px 3px 3px aquamarine;
+ border-radius: 10px;
+    padding: 5px ;
+    border: 2px solid aqua;
+}
+.option img {
+    height: 400px;
+    width:80%;
+    border-radius:20px ;
+    margin:5px auto;
+    box-shadow: 7px 10px 5px aquamarine;
+}
+label{font-size:20px;
+font-weight: bolder;
+ border-radius:30px;
+    padding: 7px ;
+    border: 2px solid aquamarine;
+    color: black;
+}
+input{
+    height:30px;
+    width: 100px;
+    margin: auto;
+    border-radius: 20px;
+    border: 3px solid aquamarine;
+    box-shadow: 5px 5px 5px black;
+}
+.wats{
+    height:50px;
+    width:300px;
+    color: white;
+    background-color: rgb(1, 61, 41);
+    border-radius: 30px;
+    margin:auto;
+    font-size: 30px;
+    font-weight: bolder;
+    box-shadow: 5px 5px 5px black;
+}
+button{
+
+ height:50px;
+    width:300px;
+    color:black;
+    background-color: rgb(189, 209, 202);
+    border-radius: 30px;
+    margin:auto;
+    font-size: 30px;
+    font-weight: bolder;
+    box-shadow: 5px 5px 5px black;
+}
+h4 {
+    background-color: rgb(189, 209, 202);
+    color: black;
+    font-size: 20px;
+    font-weight: bolder;
+    width: 40%;
+    margin:20px auto;
+    border-radius: 30%;}
+</style>
+</head>
+<body>
+    <header>
+            <img src="set.png" alt="">
+            <p>Resteront SetElbet</p>
+ </header>
+ <h1> القائمه</h1>
+
+<div class="options">
+    <div class="option" ><img src="f1.jpg" ><h2> food1 <h3>10$</h3></h2>
+      <label>العدد</label> <input type="number" id="f1"  class="qty" data-name="food1" value="0" min="0">  </div>
+    <div class="option" ><img src="f2.jpg" ><h2> food1 <h3>20$</h3></h2>
+      <label>العدد</label><input type="number"id="f2" class="qty" data-name="food2" value="0" min="0">  </div>
+    <div class="option"><img src="f3.jpg" ><h2> food1 <h3>15$</h3></h2>
+      <label>العدد</label><input type="number"id="f3" class="qty" data-name="food3" value="0" min="0">  </div>
+    <div class="option" ><img src="f4.jpg" ><h2> food1 <h3>15$</h3></h2>
+        <label>العدد</label><input type="number"id="f4" class="qty" data-name="food4" value="0" min="0">  </div>
+    <div class="option" ><img src="f5.jpg" ><h2> food1 <h3>10$</h3></h2> 
+        <label>العدد</label><input type="number"id="f5" class="qty" data-name="food5" value="0" min="0">  </div>
+    <div class="option" ><img src="ff1.jpg" ><h2> food1 <h3>60$</h3></h2> 
+        <label>العدد</label><input type="number"id="f6" class="qty" data-name="food6" value="0" min="0">  </div>
+    <div class="option" ><img src="ff2.jpg" ><h2> food1 <h3>45$</h3></h2>
+         <label>العدد</label><input type="number"id="f7"class="qty" data-name="food7" value="0" min="0">  </div>
+    <div class="option"><img src="ff3.jpg" ><h2> food1 <h3>100$</h3></h2> 
+        <label>العدد</label><input type="number" id="f8"class="qty" data-name="food8" value="0" min="0">  </div>
+ </div>
+     <button onclick="calc()">اجمالي الاوردر</button>
+       <h4 id="cal"></h4>
+
+   <button class="wats" onclick="sendOrder()"> اطلب علي الواتساب</button>
+
+<script>
+function calc (){
+let s1= parseFloat( document.getElementById ('f1').value);
+let sum1 = s1*10;
+let s2= parseFloat( document.getElementById ('f2').value);
+let sum2 = s2*20;
+let s3 = parseFloat( document.getElementById ('f3').value);
+let sum3 = s3*15;
+let s4 = parseFloat( document.getElementById ('f4').value);
+let sum4= s4*15;
+let s5= parseFloat( document.getElementById ('f5').value);
+let sum5 = s5*10;
+let s6= parseFloat( document.getElementById ('f6').value);
+let sum6 = s6*60;
+let s7 = parseFloat( document.getElementById ('f7').value);
+let sum7 = s7*45;
+let s8 = parseFloat( document.getElementById ('f8').value);
+let sum8 = s8*100;
+let sum =sum1 + sum2 + sum3 + sum4 + sum5 + sum6 + sum7 + sum8 ;
+ document.getElementById('cal').innerHTML = `الاجمالي  ${sum}`;
+};
+
+ function sendOrder(){
+            let allInputs = document.querySelectorAll('.qty');
+            let msg =`طلب جديد من مطعم ست البيت \n`;
+            let hasOrder= false;
+allInputs.forEach(input=>{
+    let count =input.value ;
+    let name =input.getAttribute( 'data-name');
+    if( count>0){
+        msg +=`${name}:العدد ${count}\n`
+        hasOrder=true; }} );
+        if(!hasOrder){
+            alert(" اختار وجبه واحدة علي الاقل");
+            return; }
+let totalText = document.getElementById('cal').innerText; msg +=`n${totalText}`;
+let whatsappLink =  'https://wa.me/201065667221?text=${encodeURIComponent(msg)}';
+  window.open(whatsappLink, '_blank');
+
+}
+</script>
+
+
+
+
+
+
+</body>
+</html>
