@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetElbet</title>
+    <style>
+        body {font-size: 20px;
+            font-weight: bolder;
+        }
+header {
+height: 100px;
+width: 100%;
+color:black;
+background-color:white;
+box-shadow: 5px 5px 5px rgb(65, 85, 78);
+border-radius: 20px;
+margin: 10px auto;
+align-items: center;
+display: flex;
+flex-direction: row;
+}
+header img {
+    height: 90px;
+    width: 100px;}
+.options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+p{font-weight: bolder;
+color: black;
+ font-size: 20px;
+background-color: aquamarine;
+box-shadow: 5px 5px 5px aqua;
+border-radius: 20px;
+padding: 10px;
+}
+
+.option{
+display:flex ;
+flex-direction: column;
+margin: 20px auto;
+padding: 10px;
+width:200px;
+border-radius: 20px;
+height: 300px;
+text-align: center;
+align-items: center;
+}
+.option img {
+    height: 250px;
+   width:200px;
+    border-radius:20px ;
+    margin:5px auto;
+    box-shadow: 7px 10px 5px aquamarine;
+}
+input{
+    height: 20px;
+    width: 50px;
+    margin: auto;
+    border-radius: 20px;
+    border: 3px solid aquamarine;
+    box-shadow: 5px 5px 5px black;
+}
+button{
+    height:50px;
+    width:200px;
+    background-color: aquamarine;
+    border-radius: 30px;
+    margin:auto;
+    box-shadow: 5px 5px 5px black;
+}
+    </style>
+</head>
+<body>
+    <header>
+            <img src="location.png" alt="">
+            <p>Resteront SetElbet</p>
+ </header>
+<div class="options">
+<p> القائمه</p>
+    <div class="option" ><img src="f1.jpg" >food1 <label>العدد</label><input type="number" class="qty" data-name="food1" value="0" min="0">  </div>
+    <div class="option" ><img src="f2.jpg" >food2<label>العدد</label><input type="number" class="qty" data-name="food1" value="0" min="0">  </div>
+    <div class="option" ><img src="f3.jpg" >food3 <label>العدد</label><input type="number" class="qty" data-name="food1" value="0" min="0">  </div>
+    <div class="option" ><img src="f4.jpg" >food4<label>العدد</label><input type="number" class="qty" data-name="food1" value="0" min="0">  </div>
+    <div class="option" ><img src="f5.jpg" >food5 <label>العدد</label><input type="number" class="qty" data-name="food1" value="0" min="0">  </div>
+    <div class="option" ><img src="ff1.jpg" >food6 <label>العدد</label><input type="number" class="qty" data-name="food1" value="0" min="0">  </div>
+    <div class="option" ><img src="ff2.jpg" >food7 <label>العدد</label><input type="number" class="qty" data-name="food1" value="0" min="0">  </div>
+    <div class="option" ><img src="ff3.jpg" >food8 <label>العدد</label><input type="number" class="qty" data-name="food1" value="0" min="0">  </div>
+   <button onclick="sendOrder()"> اطلب علي الواتساب</button>
+ </div>
+
+<script>
+
+
+    function ToggleOptions(){
+        document.getElementById('options').classList.toggle('active');    }
+        function sendOrder(){
+            let allInputs = document.querySelectorAll('qty');
+            let msg =`طلب جديد من مطعم ست البيت \n`;
+            let hasOrder= false;
+allInputs.forEach(input=>{
+    let count =input.value ;
+    let name =input.getAttribute( 'data-name');
+    if( count>0){
+        msg +=`${name}:العدد ${count}\n`
+        hasOrder=true; }} );
+        if(!hasOrder){
+            alert(" اختار وجبه واحدة علي الاقل");
+            return; }
+let whatsappLink =  'https://wa.me/201065667221?text=${encodeURIComponent(msg)}';
+  window.open(whatsappLink, '_blank');
+
+}
+</script>
+
+
+
+
+
+
+</body>
+</html>
