@@ -83,13 +83,13 @@ button{
 <div class="options">
 <p> القائمه</p>
     <div class="option" ><img src="f1.jpg" >food1 <label>العدد</label><input type="number" class="qty" data-name="food1" value="0" min="0">  </div>
-    <div class="option" ><img src="f2.jpg" >food2<label>العدد</label><input type="number" class="qty" data-name="food1" value="0" min="0">  </div>
-    <div class="option" ><img src="f3.jpg" >food3 <label>العدد</label><input type="number" class="qty" data-name="food1" value="0" min="0">  </div>
-    <div class="option" ><img src="f4.jpg" >food4<label>العدد</label><input type="number" class="qty" data-name="food1" value="0" min="0">  </div>
-    <div class="option" ><img src="f5.jpg" >food5 <label>العدد</label><input type="number" class="qty" data-name="food1" value="0" min="0">  </div>
-    <div class="option" ><img src="ff1.jpg" >food6 <label>العدد</label><input type="number" class="qty" data-name="food1" value="0" min="0">  </div>
-    <div class="option" ><img src="ff2.jpg" >food7 <label>العدد</label><input type="number" class="qty" data-name="food1" value="0" min="0">  </div>
-    <div class="option" ><img src="ff3.jpg" >food8 <label>العدد</label><input type="number" class="qty" data-name="food1" value="0" min="0">  </div>
+    <div class="option" ><img src="f2.jpg" >food2<label>العدد</label><input type="number" class="qty" data-name="food2" value="0" min="0">  </div>
+    <div class="option" ><img src="f3.jpg" >food3 <label>العدد</label><input type="number" class="qty" data-name="food3" value="0" min="0">  </div>
+    <div class="option" ><img src="f4.jpg" >food4<label>العدد</label><input type="number" class="qty" data-name="food4" value="0" min="0">  </div>
+    <div class="option" ><img src="f5.jpg" >food5 <label>العدد</label><input type="number" class="qty" data-name="food5" value="0" min="0">  </div>
+    <div class="option" ><img src="ff1.jpg" >food6 <label>العدد</label><input type="number" class="qty" data-name="food6" value="0" min="0">  </div>
+    <div class="option" ><img src="ff2.jpg" >food7 <label>العدد</label><input type="number" class="qty" data-name="food7" value="0" min="0">  </div>
+    <div class="option" ><img src="ff3.jpg" >food8 <label>العدد</label><input type="number" class="qty" data-name="food8" value="0" min="0">  </div>
    <button onclick="sendOrder()"> اطلب علي الواتساب</button>
  </div>
 
@@ -99,7 +99,7 @@ button{
     function ToggleOptions(){
         document.getElementById('options').classList.toggle('active');    }
         function sendOrder(){
-            let allInputs = document.querySelectorAll('qty');
+            let allInputs = document.querySelectorAll('.qty');
             let msg =`طلب جديد من مطعم ست البيت \n`;
             let hasOrder= false;
 allInputs.forEach(input=>{
